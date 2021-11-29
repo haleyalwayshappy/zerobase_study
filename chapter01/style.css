@@ -1,0 +1,54 @@
+/* css 순서 정리  */
+
+body {
+  box-sizing: border-box;
+  position: relative / absolute / fixed / sticky;
+  display: flex / block / inline-block / block;
+  margin: 100px;
+  padding: 100px;
+  width: 100px;
+  height: 100px;
+  border: 1px solid #000;
+  background: #fff;
+  font-size: 16px;
+  font-weight: 300 (thin) / 400 (normal) / 500 (mideum) / 700 (bold);
+  color: #000;
+  text-align: center / left / right;
+  overflow: auto / scroll / hidden;
+  z-index: 1;
+}
+
+body {
+  box-sizing: border-box;
+  /* 박스사이징을 하는 이유는 패딩 + 보더 등 추가되는 것들에 의해 지정한 값(width,height) 이 바뀌지 않게끔 고정해주는 것  */
+
+  position: relative / absolute / fixed / sticky;
+  /* relative (기본값) , absolute (부모를 기준으로 잡고 위치변경을 해준다) , 
+  fixed (위치를 고정해준다. +보통 오른쪽 하단에 위로 이동해주는 화살표같은것을 만들때 씀 , fixed는 다른 태그와 겹칠 수 있는 이슈가 있다.)
+  sticky (어느 시점까지는 움직이다가 요소가 특정위치에 도달하면 특정 위치에서 고정이된다. +모바일에서 상단 메뉴에 사용된다.)
+  
+  */
+  display: flex / inline / inline-block / block / none;
+  /* flex 
+    block
+    inline-block
+     */
+  margin: 100px;
+  padding: 100px;
+  width: 100px;
+  height: 100px;
+  border: 1px solid #000;
+  background: #fff;
+  font-size: 16px;
+  font-weight: 300 (thin) / 400 (normal) / 500 (mideum) / 700 (bold);
+  color: #000;
+  text-align: center / left / right;
+  overflow: auto / scroll / hidden;
+  z-index: 1;
+}
+
+/* attr 어트리뷰트 선택자 인풋의 타입이 텍스트일 경우! (유용할듯) */
+/* html <input type="text"> */
+input[type="text"]{
+    border-color : red;
+}
