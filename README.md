@@ -10,3 +10,27 @@ chapeter 02 css 정리
 
 ### 11월 29일 공부 시작 
 >>>>>>> 09fe4419efc4385e8834a39ccf30cf7c33ce8af2
+
+### 11월 30일 
+
+#### scss 
+`sudo npm i -g sass` 
+- sass 설치 
+- vscode에서 live sass compiler 설치 - 확장설정 - setting.json 
+- setting.json 에 해당코드 넣어주기
+ ``` 
+   "liveSassCompile.settings.formats": [
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": "./assets/css"
+        }
+    ]
+ ``` 
+이 코드는 sass,scss를 css파일로 컴파일 해줄때 어느 경로에 저장할 것인지 지정해주는 것 
+`"savePath": "./assets/css"` 이 부분 중요!
+
+#### normalize css - reset css 
+- 마크업 언어들은 기본적인 css가 있기때문에 초기화를 해주는 것이 좋다 
+- 검색한번 해보기 
+
