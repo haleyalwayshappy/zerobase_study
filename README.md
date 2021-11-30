@@ -1,5 +1,5 @@
 # zerobase_study
-<<<<<<< HEAD
+
 chapter 01 html 정리 
 
 - id 와 for -> 연결
@@ -9,7 +9,6 @@ chapeter 02 css 정리
 =======
 
 ### 11월 29일 공부 시작 
->>>>>>> 09fe4419efc4385e8834a39ccf30cf7c33ce8af2
 
 ### 11월 30일 
 
@@ -33,4 +32,8 @@ chapeter 02 css 정리
 #### normalize css - reset css 
 - 마크업 언어들은 기본적인 css가 있기때문에 초기화를 해주는 것이 좋다 
 - 검색한번 해보기 
+
+
+#### 네이버 주문서 페이지 만들기 
+- 맨 처음 페이지인 매장, 포장 선택 팝업 페이지 만들기 
 
