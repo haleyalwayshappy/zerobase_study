@@ -40,7 +40,7 @@
   .icon {
     width: 100px;
     height: auto;
-    color :$booking-color-bg118;
+    color: $booking-color-bg118;
   }
   .desc {
     margin-top: 8px;
@@ -50,14 +50,14 @@
     color: $booking-color-text1;
   }
 
-  .btn-selection{
-      display: inline-block;
-      margin-top:10px;
-      padding: 6px 18px;
-      font-size: 16px;
-      font-weight: 700;
-      border-radius: 28px;
-      background-color: $booking-color-bg189;
-      color:#fff;
+  .btn-selection {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 6px 18px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 28px;
+    background-color: $booking-color-bg189;
+    color: #fff;
   }
 }
