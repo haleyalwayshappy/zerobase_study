@@ -40,4 +40,6 @@ chapeter 02 css 정리
 
 ## 12월 6일 
 또 깃허브 이메일 설정안해서 그동안 커밋이 체크가 안되어 있눼!!!
-
+git config --global user.email "email"
+git config --global user.name "name"
+입력해서 변경해 보았다.
