@@ -19,11 +19,9 @@
       font-size: 20px;
       font-weight: 600;
     }
-
     .link-back {
       display: flex;
     }
-
     .my-orders {
       padding-right: $m-padding;
       font-size: 15px;
@@ -35,7 +33,6 @@
     display: flex;
     height: $place-tab-height;
     background-color: #03b753;
-    @include scroll-x;
   }
   .tab-inner {
     display: flex;
@@ -50,12 +47,11 @@
       font-size: 16px;
       text-align: center;
       opacity: 0.7;
-
       &.is-active {
         font-weight: 700;
         opacity: 1;
         .txt::after {
-          content: "";
+          content: '';
           position: absolute;
           bottom: 0;
           left: 0;
@@ -64,8 +60,7 @@
           background-color: #fff;
         }
       }
-
-      .txt {
+      .txt{
         position: relative;
         display: inline-block;
         padding: 0 4px;
