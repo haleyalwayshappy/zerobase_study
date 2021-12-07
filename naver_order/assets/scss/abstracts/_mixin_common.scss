@@ -1,17 +1,16 @@
-
 // 말줄임. 생략 할 때 사용 ... 이렇게!
 @mixin ellipse {
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 @mixin multi-ellipsis($font-size, $line-height, $lines) {
-    font-size: $font-size;
-    line-height: $line-height;
-    max-height: $line-height * $lines;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: $lines;
-    -webkit-box-orient: vertical; /* autoprefixer: off */
+  font-size: $font-size;
+  line-height: $line-height;
+  max-height: $line-height * $lines;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical; /* autoprefixer: off */
 }

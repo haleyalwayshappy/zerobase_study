@@ -10,8 +10,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    //flex-shrink 본연의 가지고 있어야하는 너비값이 고정이 되는 코드임 
-    flex-shrink:0;
+    //flex-shrink 본연의 가지고 있어야하는 너비값이 고정이 되는 코드임
+    flex-shrink: 0;
 
     padding: 8px;
     border-right: 1px solid $booking-color-bg102;
