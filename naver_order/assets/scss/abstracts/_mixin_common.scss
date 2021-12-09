@@ -1,5 +1,5 @@
 // 말줄임. 생략 할 때 사용 ... 이렇게!
-@mixin ellipse {
+@mixin ellipsis {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;

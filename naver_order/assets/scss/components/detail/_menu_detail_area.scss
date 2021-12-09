@@ -35,7 +35,7 @@
         }
     }
 
-    // 메뉴 정보 영역 
+    // 메뉴 정보 영역
     .menu-info-area {
         padding: 0 $m-padding 20px;
         margin-top: -20px;
@@ -43,27 +43,27 @@
         .common-inner {
             position: relative;
             padding: 18px;
-            border-radius: 5px;        
+            border-radius: 5px;
             background-color: #fff;
-            box-shadow: 0 0 4px 3x rgba(0, 0, 0, 0.04);
+            box-shadow: 0 0 4px 3px rgba(0, 0, 0, 0.04);
             z-index: 1;
         }
 
-        .menu-info-group{
+        .menu-info-group {
             margin-top: 5px;
 
-            .menu-price{
+            .menu-price {
                 line-height: 24px;
                 font-size: 19px;
                 font-weight: 700;
-                color :$point-color;
+                color: $point-color;
             }
 
             .menu-grade::before,
-            .menu-number-of-order::before{
-                content : '';
+            .menu-number-of-order::before {
+                content: '';
                 display: inline-block;
-                margin :0 8px;
+                margin: 0 8px;
                 width: 1px;
                 height: 12px;
                 background-color: $booking-color-bg204;
@@ -72,15 +72,109 @@
             }
 
             .menu-grade,
-            .menu-number-of-order{
+            .menu-number-of-order {
                 line-height: 24px;
             }
         }
-        .menu-desc{
+
+        .menu-desc {
             margin-top: 12px;
             font-size: 15px;
             line-height: 22px;
-            color :$booking-color-text6;
+            color: $booking-color-text6;
+        }
+    }
+
+    // 메뉴 주문 영역
+    .order-type-area {
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid $booking-color-border160;
+
+        .type-select,
+        .type-amount {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .type-select {
+            .title {
+                display: flex;
+                align-items: center;
+                font-size: 15px;
+                font-weight: 700;
+                letter-spacing: -0.3px;
+                color: $booking-color-text6;
+            }
+
+            .ico-n-logo {
+                margin-right: 4px;
+                width: 20px;
+            }
+
+            .tab-switch-box {
+                margin-top: 0;
+                border-radius: 3px;
+                overflow: hidden;
+            }
+
+            .tab-switch {
+                width: 80px;
+                line-height: 37px;
+                font-size: 13px;
+
+                &.is-active {
+                    flex: 1;
+                    border-radius: 3px;
+
+                    &::after {
+                        display: none;
+                    }
+                }
+
+                &+.tab-switch {
+                    position: relative;
+
+                    &::before {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        top: 10px;
+                        left: 0;
+                        width: 1px;
+                        height: 17px;
+                        background-color: #e7e7e7;
+                    }
+                }
+            }
+        }
+
+        .type-amount{
+            margin-top: 20px;
+            .title{
+                // display: flex;
+                // align-items: center;
+                font-size: 14px;
+                font-weight: 700;
+                letter-spacing: -0.3px;
+                color: $booking-color-text6; 
+            }
+        }
+        .btn-order{
+            display: block;
+            margin-top: 20px;
+            width: 100%;
+            line-height: 46px;
+            border-radius: 3px;
+            font-weight: 700;
+            background-color: $green ;
+            color: #fff;
+            @include ellipsis;
+            &:disabled{
+                background-color: #c9c9c9;
+                color:$booking-color-text131;
+            }
         }
     }
 }
