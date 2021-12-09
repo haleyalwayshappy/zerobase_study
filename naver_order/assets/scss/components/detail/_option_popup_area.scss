@@ -13,7 +13,7 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        min-height: calc(100%-45px);
+        max-height: calc(100% - 45px);
         background-color: $booking-color-border151;
         z-index: 10000;
     }
@@ -29,7 +29,7 @@
     .content-top {
         border-bottom: 1px solid $booking-color-border122;
         background-color: #fff;
-        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.08);
+        box-shadow: 0 0 15px 0 rgba(0,0,0,0.08);
         z-index: 1;
 
         .common-inner {
@@ -46,7 +46,6 @@
             height: 70px;
             border-radius: 100%;
             overflow: hidden;
-
             &::after {
                 content: '';
                 position: absolute;
@@ -67,11 +66,9 @@
             display: flex;
             align-items: center;
             font-weight: 700;
-
             .name {
                 font-size: 18px;
             }
-
             .badge {
                 margin-left: 6px;
                 padding: 0 7px;
@@ -100,11 +97,10 @@
     .content-body {
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
-
+        
         .option-group {
             background-color: #fff;
-
-            &+.option-group {
+            & + .option-group {
                 margin-top: 12px;
             }
         }
@@ -120,7 +116,6 @@
                 align-items: center;
                 font-size: 18px;
             }
-
             .badge {
                 margin-right: 8px;
                 padding: 0 4px;
@@ -129,16 +124,14 @@
                 line-height: 17px;
                 font-size: 13px;
                 color: #fff;
-
                 &.required {
                     background-color: $booking-color-bg193;
                 }
             }
-
             .desc {
                 margin-top: 2px;
                 line-height: 24px;
-                font-size: 16px;
+                font-size: 15px;
                 font-weight: 400;
             }
         }
@@ -152,7 +145,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-
             &:not(:first-child) {
                 margin-top: 14px;
             }
@@ -163,20 +155,16 @@
                 align-items: center;
                 width: 100%;
                 font-size: 17px;
-
                 &.checked {
                     font-weight: 700;
-
                     .price {
                         font-weight: 600;
                         color: $point-color;
                     }
                 }
-
                 .label-txt {
                     padding-right: 8px;
                 }
-
                 .label-icon {
                     display: inline-flex;
                     flex-shrink: 0;
@@ -189,36 +177,33 @@
 
             .input-radio,
             .input-check {
-                &:checked+.label {
+                &:checked + .label {
                     font-weight: 700;
                 }
             }
 
             .input-radio {
-                &+.label .label-icon {
+                & + .label .label-icon {
                     border-radius: 100%;
                 }
-
-                &:checked+.label .label-icon {
+                &:checked + .label .label-icon {
                     border: 8px solid $green;
                 }
             }
 
             .input-check {
-                &+.label .label-icon {
+                & + .label .label-icon {
                     border-radius: 3px;
                 }
-
-                &:checked+label {
+                &:checked + .label {
                     .price {
-                        font-weight: 500;
+                        font-weight: 600;
                         color: $point-color;
                     }
-
                     .label-icon {
                         position: relative;
                         border-color: $green;
-
+                        background-color: $green;
                         &::before {
                             content: '';
                             position: absolute;
@@ -238,7 +223,6 @@
 
     .content-bottom {
         padding: 0 10px 10px;
-
         .btn-order {
             @include common-inner;
             display: block;
@@ -249,7 +233,6 @@
             background-color: $green;
             color: #fff;
             @include ellipsis;
-
             &:disabled {
                 background-color: #c9c9c9;
                 color: $booking-color-text131;
@@ -257,4 +240,3 @@
         }
     }
 }
-
