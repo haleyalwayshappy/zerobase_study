@@ -1942,7 +1942,7 @@ body.scroll-off {
   border: 1px solid #d5dadd;
   background-color: #fff;
   font-size: 15px;
-  color: red;
+  color: #242424;
 }
 
 .order-content-extra .place-map-area {
@@ -2031,8 +2031,9 @@ body.scroll-off {
 }
 
 .order-content-extra .agreement-area .agreement-content {
+  display: none;
   padding: 12px;
-  min-height: 194px;
+  max-height: 194px;
   border-top: 1px solid #ecf0f2;
   background-color: #f8fafb;
   font-size: 14px;
