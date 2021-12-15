@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 
-<body>
+<body class="scroll-off">
     <div class="container order">
         <div class="order-form-area">
             <!-- 주문서 타이틀 -->
@@ -109,6 +109,7 @@
             <!-- // 주문서 메뉴 -->
 
             <!-- 주문자 정보 -->
+
             <div class="order-content-extra">
                 <div class="common-inner">
                     <div class="orderer-info-area">
@@ -123,33 +124,32 @@
                                     </div>
                                     <div class="option-item">
                                         <input type="radio" id="no-need" class="input-radio" name="disposables">
-                                        <label for="no-need" class="input-radio-button no-need">필요 없어요</label>
+                                        <label for="no-need" class="input-radio-button no-need">필요없어요</label>
                                     </div>
                                 </div>
                             </li>
                             <li class="info-item">
-                                <p class="info-title">요청사항</p>
-                                <input type="text" placeholder="(선택) 요청사항을 입력해 주세요." class="input-text">
+                                <p class="info-title">요청 사항</p>
+                                <input type="text" class="input-text" placeholder="(선택) 요청사항을 입력해 주세요.">
                             </li>
                             <li class="info-item">
-                                <p class="info-title">주문자 연락처<span class="fw700 color-point">(필수)</span></p>
-                                <input type="text" placeholder="연락처를 입력해 주세요." class="input-text" required>
+                                <p class="info-title">주문자 연락처 <span class="color-point fw700">(필수)</span> </p>
+                                <input type="text" class="input-text" placeholder="연락처를 입력해 주세요." required>
                             </li>
                         </ul>
                     </div>
 
                     <div class="place-map-area">
-                        <p class="title">주문 매장 위치</p>
+                        <p class="title">주문 매장 위치 </p>
                         <div class="map-area">
                             <div class="place-address-box">
                                 <p class="place-name">샐러드 제로베이스점</p>
                                 <p class="place-address">서울시 강남구 역삼동 123-4</p>
-                                <p class="place-address-detail">역삼역 8번 출구로 나와서 직진 410m</p>
+                                <p class="address-detail">역삼역 8번 출구로 나와서 직진 410m</p>
                             </div>
                             <img src="https://via.placeholder.com/400x170?text=map image" alt="" class="img-map">
                         </div>
                     </div>
-
                     <div class="agreement-area">
                         <p class="title">개인정보 수집, 제공</p>
 
@@ -210,6 +210,7 @@
                     </div>
                 </div>
             </div>
+
             <!-- // 주문자 정보 -->
 
             <!-- 주문하기 버튼 -->
