@@ -346,6 +346,16 @@
         </div>
         <!-- // 옵션 팝업 영역 -->
     </div>
+    <script>
+        const popupOpen = () => {
+            document.querySelector('body').classList.add('scroll-off');
+            document.querySelector('.option-popup-area').classList.add('show');
+        }
+        const popupClose = () => {
+            document.querySelector('body').classList.remove('scroll-off');
+            document.querySelector('.option-popup-area').classList.remove('show');
+        }
+    </script>
 </body>
 
 </html>
