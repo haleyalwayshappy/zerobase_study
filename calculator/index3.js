@@ -74,8 +74,7 @@
  */
 
 const contents = document.querySelector('.contents');
-const display = document.querySelector('.result'); // 결과 화면
-const numbers = document.querySelector('.numbers'); //숫자  버튼들
+const display = document.querySelector('.result'); 
 const operators = document.querySelector('.operators');
 
 function calculate(num1, operator, num2) {
@@ -101,9 +100,11 @@ let previousKey = ''; // 이전 키
 let previousNum = ''; // 이전숫자
 
 contents.addEventListener('click', function (event) {
+
     const target = event.target; // 클릭된 html 엘리먼트의 정보가 저장되어 있다.
     const action = target.classList[0]; // 클릭된 html 엘리먼트에 클래스 정보를 가져온다. 
     const buttonContent = target.textContent; //클릭된 html 엘리먼트의 텍스트 정보를  가져온다. 
+    
 
     if (target.matches('button')) {
         if (action === 'number') { // 번호 버튼 액션 => 번호가 화면에 차례대로 반영
@@ -137,14 +138,12 @@ contents.addEventListener('click', function (event) {
         }
 
 
-        if (action === 'operator') { // //클릭된 HTML 엘리먼트의 클래스 네임이 'operator'일때 분기
+        if (action === 'operator') { // //클릭된 HTML 엘리먼트의 클래스 네임이 'operator'일때 분기     
             operatorForAdvanced = buttonContent; // 오퍼레이터 누를 때 누른 텍스트 정보 할당
             previousKey = operatorForAdvanced; // 직전키에 오퍼레이터 텍스트 정보 할당
-            // console.log('test' + previousKey);
         }
         
-        if (action === 'test') { // Enter(계산) 버튼을 누를 때
-
+        if (action == 'test') { // Enter(계산) 버튼을 누를 때
             if (firstNum !== '' && operatorForAdvanced === '') {
                 display.textContent = firstNum;
 
