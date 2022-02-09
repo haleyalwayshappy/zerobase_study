@@ -1,3 +1,7 @@
+<!-- 터미널에서 db 연동하는 방법.
+json-server --watch db.json
+ -->
+
 ## To do list
 
 - 투두리스트 구현

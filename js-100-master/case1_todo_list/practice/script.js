@@ -14,7 +14,6 @@
     const { id, content, completed } = item
     const isChecked = completed ? 'checked' : ''
     const $todoItem = document.createElement('div')
-
     $todoItem.classList.add('item')
     $todoItem.dataset.id = id
     $todoItem.innerHTML = `
@@ -22,6 +21,7 @@
               <input
                 type="checkbox"
                 class='todo_checkbox' 
+                ${isChecked}
               />
               <label>${content}</label>
               <input type="text" value="${content}" />
@@ -67,14 +67,13 @@
     e.preventDefault()
     const content = $todoInput.value
     if (!content) return
-
     const todo = {
       content,
       completed: false,
     }
     fetch(API_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-type': 'application/json' },
       body: JSON.stringify(todo),
     })
       .then((response) => response.json())
@@ -87,15 +86,14 @@
   }
 
   const toggleTodo = (e) => {
+    console.log('class Name'+e.target.className)
     if (e.target.className !== 'todo_checkbox') return
     const $item = e.target.closest('.item')
     const id = $item.dataset.id
     const completed = e.target.checked
     fetch(`${API_URL}/${id}`, {
       method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: { 'Content-type': 'application/json' },
       body: JSON.stringify({ completed }),
     })
       .then((response) => response.json())
@@ -103,12 +101,19 @@
       .catch((error) => console.error(error.message))
   }
 
+  
+
   const init = () => {
     window.addEventListener('DOMContentLoaded', () => {
       getTodos()
     })
+
     $form.addEventListener('submit', addTodo)
     $todos.addEventListener('click', toggleTodo)
+    $todos.addEventListener('click', changeEditMode)
+    $todos.addEventListener('click', editTodo)
+    $todos.addEventListener('click', removeTodo)
   }
+
   init()
-})
+})()

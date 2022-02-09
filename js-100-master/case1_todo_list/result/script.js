@@ -86,6 +86,7 @@
   }
 
   const toggleTodo = (e) => {
+    console.log('class Name'+e.target.className)
     if (e.target.className !== 'todo_checkbox') return
     const $item = e.target.closest('.item')
     const id = $item.dataset.id
