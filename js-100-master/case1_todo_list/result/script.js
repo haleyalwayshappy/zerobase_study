@@ -1,4 +1,5 @@
-;(function () {
+;
+(function () {
   'use strict'
 
   const get = (target) => {
@@ -11,7 +12,11 @@
   const API_URL = `http://localhost:3000/todos`
 
   const createTodoElement = (item) => {
-    const { id, content, completed } = item
+    const {
+      id,
+      content,
+      completed
+    } = item
     const isChecked = completed ? 'checked' : ''
     const $todoItem = document.createElement('div')
     $todoItem.classList.add('item')
@@ -72,10 +77,12 @@
       completed: false,
     }
     fetch(API_URL, {
-      method: 'POST',
-      headers: { 'Content-type': 'application/json' },
-      body: JSON.stringify(todo),
-    })
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json'
+        },
+        body: JSON.stringify(todo),
+      })
       .then((response) => response.json())
       .then(getTodos)
       .then(() => {
@@ -86,16 +93,20 @@
   }
 
   const toggleTodo = (e) => {
-    console.log('class Name'+e.target.className)
+
     if (e.target.className !== 'todo_checkbox') return
     const $item = e.target.closest('.item')
     const id = $item.dataset.id
     const completed = e.target.checked
     fetch(`${API_URL}/${id}`, {
-      method: 'PATCH',
-      headers: { 'Content-type': 'application/json' },
-      body: JSON.stringify({ completed }),
-    })
+        method: 'PATCH',
+        headers: {
+          'Content-type': 'application/json'
+        },
+        body: JSON.stringify({
+          completed
+        }),
+      })
       .then((response) => response.json())
       .then(getTodos)
       .catch((error) => console.error(error.message))
@@ -136,10 +147,14 @@
     const content = $editInput.value
 
     fetch(`${API_URL}/${id}`, {
-      method: 'PATCH',
-      headers: { 'Content-type': 'application/json' },
-      body: JSON.stringify({ content }),
-    })
+        method: 'PATCH',
+        headers: {
+          'Content-type': 'application/json'
+        },
+        body: JSON.stringify({
+          content
+        }),
+      })
       .then((response) => response.json())
       .then(getTodos)
       .catch((error) => console.error(error.message))
@@ -147,16 +162,16 @@
 
   const removeTodo = (e) => {
     if (e.target.className !== 'todo_remove_button') return
-    const $item = e.target.closest('.item')
+    const $item  = e.target.closest('.item')
     const id = $item.dataset.id
 
     fetch(`${API_URL}/${id}`, {
-      method: 'DELETE',
-    })
+        method: 'DELETE',
+      })
       .then((response) => response.json())
       .then(getTodos)
       .catch((error) => console.error(error.message))
-  }
+  } 
 
   const init = () => {
     window.addEventListener('DOMContentLoaded', () => {

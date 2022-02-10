@@ -1,4 +1,5 @@
-;(function () {
+;
+(function () {
   'use strict'
 
   const get = (target) => {
@@ -11,7 +12,11 @@
   const API_URL = `http://localhost:3000/todos`
 
   const createTodoElement = (item) => {
-    const { id, content, completed } = item
+    const {
+      id,
+      content,
+      completed
+    } = item
     const isChecked = completed ? 'checked' : ''
     const $todoItem = document.createElement('div')
     $todoItem.classList.add('item')
@@ -72,10 +77,12 @@
       completed: false,
     }
     fetch(API_URL, {
-      method: 'POST',
-      headers: { 'Content-type': 'application/json' },
-      body: JSON.stringify(todo),
-    })
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json'
+        },
+        body: JSON.stringify(todo),
+      })
       .then((response) => response.json())
       .then(getTodos)
       .then(() => {
@@ -86,22 +93,88 @@
   }
 
   const toggleTodo = (e) => {
-    console.log('class Name'+e.target.className)
     if (e.target.className !== 'todo_checkbox') return
     const $item = e.target.closest('.item')
     const id = $item.dataset.id
     const completed = e.target.checked
     fetch(`${API_URL}/${id}`, {
-      method: 'PATCH',
-      headers: { 'Content-type': 'application/json' },
-      body: JSON.stringify({ completed }),
-    })
+        method: 'PATCH',
+        headers: {
+          'Content-type': 'application/json'
+        },
+        body: JSON.stringify({
+          completed
+        }),
+      })
       .then((response) => response.json())
       .then(getTodos)
       .catch((error) => console.error(error.message))
   }
 
-  
+
+  const changeEditMode = (e) => {
+    const $item = e.target.closest('.item') // 타겟과 제일 가까운 .item찾기
+    const $label = $item.querySelector('label') // .item의 라벨 찾기
+    const $editInput = $item.querySelector('input[type="text"]') // .item의 input 타입을 텍스트로 
+    const $contentButtons = $item.querySelector('.content_buttons') // 기본 수정, 삭제 아이콘
+    const $editButtons = $item.querySelector('.edit_buttons') // 에딧 버전에서 쓰일 확인 취소 아이콘
+    const value = $editInput.value
+
+    if (e.target.className === 'todo_edit_button') {
+      $label.style.display = 'none'
+      $editInput.style.display = 'block'
+      $contentButtons.style.display = 'none'
+      $editButtons.style.display = 'block'
+      $editInput.focus() // 커서가 수정해야하는 곳에 깜빡인다 (근데 왼쪽에서 깜빡거린다.)
+      $editInput.value = '' // 그래서 이코드랑 
+      $editInput.value = value // 이코드를 작성해주면 글 오른쪽에 커서가 깜빡거림 ㅇㅇ
+
+    }
+
+    if (e.target.className === 'todo_edit_cancel_button') {
+      $label.style.display = 'block'
+      $editInput.style.display = 'none'
+      $contentButtons.style.display = 'block'
+      $editButtons.style.display = 'none'
+      $editInput.value = $label.innerText
+    }
+  }
+
+  const editTodo = (e) => {
+    if (e.target.className !== 'todo_edit_confirm_button') return
+    const $item = e.target.closest('.item')
+    const id = $item.dataset.id
+    const $editInput = $item.querySelector('input[type="text"]')
+    const content = $editInput.value
+
+    fetch(`${API_URL}/${id}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-type': 'application/json'
+        },
+        body: JSON.stringify({
+          content
+        }),
+      })
+      .then((response) => response.json())
+      .then(getTodos)
+      .catch((error) => console.error(error.message))
+
+  }
+
+  const removeTodo = (e) => {
+    if (e.target.className !== 'todo_remove_button') return
+    const $item = e.target.closest('.item')
+    const id = $item.dataset.id
+
+    fetch(`${API_URL}/${id}`, {
+        method: 'DELETE',
+      })
+      .then((response) => response.json())
+      .then(getTodos)
+      .catch((error) => console.error(error.message))
+  }
+
 
   const init = () => {
     window.addEventListener('DOMContentLoaded', () => {
